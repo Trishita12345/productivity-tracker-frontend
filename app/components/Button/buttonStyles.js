@@ -1,25 +1,36 @@
 import { css } from 'styled-components';
 
+const textColor = {
+  primary: '#fffaff',
+  secondary: '#87797F',
+};
+const bgColor = {
+  primary: '#0f1322',
+  secondary: '#F5F5F5',
+};
+const bgColorActive = {
+  primary: '#4e63b2',
+  secondary: '#C6C6C6',
+};
+
 const buttonStyles = css`
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 0.25em 2em;
-  text-decoration: none;
-  border-radius: 4px;
-  -webkit-font-smoothing: antialiased;
-  -webkit-touch-callout: none;
-  user-select: none;
-  cursor: pointer;
-  outline: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  border: 2px solid #41addd;
-  color: #41addd;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 19px;
+  color: ${({ variant }) => textColor[variant]};
+
+  background: ${({ variant }) => bgColor[variant]};
+  border-radius: 10px;
 
   &:active {
-    background: #41addd;
-    color: #fff;
+    background: ${({ variant }) => bgColorActive[variant]};
+    cursor: pointer;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 

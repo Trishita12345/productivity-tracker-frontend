@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import GlobalStyle from '../../global-styles';
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
@@ -29,7 +30,7 @@ export default function App() {
         <Route path="/features" component={FeaturePage} /> */}
         <Route path="" component={NotFoundPage} />
       </Switch>
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
     </AppWrapper>
   );
 }

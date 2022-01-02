@@ -1,0 +1,23 @@
+/*
+ * {{ properCase name }} Stories
+ *
+ * This contains all the story for the {{ properCase name }} component.
+ */
+import React from "react";
+import {{ properCase name }} from ".";
+
+
+export default {
+    title: 'form/{{ properCase name }}',
+    component: {{ properCase name }},
+    args: {
+        children: ''
+    }
+}
+
+const Template = args => <{{ properCase name }} {...args}/>
+
+export const Primary = Template.bind({})
+Primary.args = {
+    variant: 'primary'
+}

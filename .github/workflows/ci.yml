@@ -26,6 +26,7 @@ jobs:
       - run: npm run build --if-present
       - run: npm run lint
       - run: npm test
+      - run: sed -i "s|SF:/home/runner/work/productivity-tracker-frontend/productivity-tracker-frontend/|SF:../../|g" coverage/lcov.info
       - name: Archive test coverage artifacts
         uses: actions/upload-artifact@v2
         with:

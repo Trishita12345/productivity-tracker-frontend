@@ -28,6 +28,12 @@ module.exports = {
     },
     {
       type: 'confirm',
+      name: 'story',
+      default: false,
+      message: 'Do you want to create story for your component?',
+    },
+    {
+      type: 'confirm',
       name: 'memo',
       default: false,
       message: 'Do you want to wrap your component in React.memo?',
@@ -61,6 +67,15 @@ module.exports = {
         abortOnFail: true,
       },
     ];
+
+    if(data.story){
+      actions.push({
+        type: 'add',
+        path: '../../app/components/{{properCase name}}/{{properCase name}}.stories.jsx',
+        templateFile: './component/stories.js.hbs',
+        abortOnFail: true,
+      });
+    }
 
     // If the user wants i18n messages
     if (data.wantMessages) {

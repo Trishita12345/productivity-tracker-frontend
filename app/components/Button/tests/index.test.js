@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import { fireEvent, render } from 'react-testing-library';
+import { render } from 'react-testing-library';
 
 import Button from '../index';
 
@@ -18,31 +18,9 @@ const renderComponent = (props = {}) =>
   );
 
 describe('<Button />', () => {
-  it('should render an <a> tag if no route is specified', () => {
-    const { container } = renderComponent({ href });
-    expect(container.querySelector('a')).not.toBeNull();
-  });
-
   it('should render a <button> tag to change route if the handleRoute prop is specified', () => {
     const { container } = renderComponent({ handleRoute });
     expect(container.querySelector('button')).toBeDefined();
-  });
-
-  it('should have children', () => {
-    const { container } = renderComponent();
-    expect(container.querySelector('a').children).toHaveLength(1);
-  });
-
-  it('should handle click events', () => {
-    const onClickSpy = jest.fn();
-    const { container } = renderComponent({ onClick: onClickSpy });
-    fireEvent.click(container.querySelector('a'));
-    expect(onClickSpy).toHaveBeenCalled();
-  });
-
-  it('should have a class attribute', () => {
-    const { container } = renderComponent();
-    expect(container.querySelector('a').hasAttribute('class')).toBe(true);
   });
 
   it('should not adopt a type attribute when rendering an <a> tag', () => {

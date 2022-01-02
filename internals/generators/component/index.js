@@ -71,7 +71,7 @@ module.exports = {
     if(data.story){
       actions.push({
         type: 'add',
-        path: '../../app/components/{{properCase name}}/{{properCase name}}.stories.jsx',
+        path: '../../app/components/{{properCase name}}/{{properCase name}}.stories.js',
         templateFile: './component/stories.js.hbs',
         abortOnFail: true,
       });

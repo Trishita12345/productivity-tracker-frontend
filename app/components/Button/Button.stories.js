@@ -4,6 +4,9 @@ import Button from '.';
 export default {
   title: 'form/Button',
   component: Button,
+  args: {
+    children: 'Click Me',
+  },
 };
 
 const Template = args => <Button {...args} />;
@@ -11,11 +14,9 @@ const Template = args => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
-  children: 'Primary Args',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: 'secondary',
-  children: 'Secondary Args',
 };

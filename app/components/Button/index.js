@@ -11,20 +11,19 @@ import PropTypes from 'prop-types';
 
 import StyledButton from './StyledButton';
 import Wrapper from './Wrapper';
+import { VARIANTS } from '../../utils/constants/variants';
 
-function Button({ onButtonClick, children, variant = 'secondary' }) {
-  return (
-    <Wrapper>
-      <StyledButton onClick={onButtonClick} variant={variant}>
-        {Children.toArray(children)}
-      </StyledButton>
-    </Wrapper>
-  );
-}
+const Button = ({ onButtonClick, children, variant = VARIANTS.PRIMARY }) => (
+  <Wrapper>
+    <StyledButton onClick={onButtonClick} variant={variant}>
+      {Children.toArray(children)}
+    </StyledButton>
+  </Wrapper>
+);
 
 Button.propTypes = {
   onButtonClick: PropTypes.func,
-  variant: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf([VARIANTS.PRIMARY, VARIANTS.SECONDARY]),
   children: PropTypes.node.isRequired,
 };
 

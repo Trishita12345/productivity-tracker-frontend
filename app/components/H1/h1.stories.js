@@ -1,16 +1,16 @@
 import React from 'react';
-import Button from '.';
+import H1 from '.';
 import { VARIANTS } from '../../utils/constants/variants';
 
 export default {
-  title: 'form/Button',
-  component: Button,
+  title: 'form/H1',
+  component: H1,
   args: {
-    children: 'Click Me',
+    label: 'Label',
   },
 };
 
-const Template = args => <Button {...args} />;
+const Template = args => <H1 {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -20,4 +20,9 @@ Primary.args = {
 export const Secondary = Template.bind({});
 Secondary.args = {
   variant: VARIANTS.SECONDARY,
+};
+
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  variant: VARIANTS.TERTIARY,
 };

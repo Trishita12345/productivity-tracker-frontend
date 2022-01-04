@@ -173,16 +173,6 @@
     "webpack-pwa-manifest": "4.0.0",
     "whatwg-fetch": "3.0.0"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "collectCoverage": true,
-    "testResultsProcessor": "jest-sonar-reporter",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "**/test/",
-      "/internals/"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"

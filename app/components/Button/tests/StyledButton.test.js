@@ -1,27 +1,21 @@
 import React from 'react';
-import { render } from 'react-testing-library';
-
+import { configure, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import StyledButton from '../StyledButton';
+import { VARIANTS } from '../../../utils/constants/variants';
+
+configure({ adapter: new Adapter() });
 
 describe('<StyledButton />', () => {
-  it('should render an <button> tag', () => {
-    const { container } = render(<StyledButton />);
-    expect(container.querySelector('button')).not.toBeNull();
-  });
+  const props = { variant: VARIANTS.PRIMARY };
 
-  it('should have a class attribute', () => {
-    const { container } = render(<StyledButton />);
-    expect(container.querySelector('button').hasAttribute('class')).toBe(true);
-  });
+  const ComponentRenderer = myProps => {
+    const component = mount(<StyledButton {...myProps} />);
+    return component;
+  };
 
-  it('should adopt a valid attribute', () => {
-    const id = 'test';
-    const { container } = render(<StyledButton id={id} />);
-    expect(container.querySelector('button').id).toEqual(id);
-  });
-
-  it('should not adopt an invalid attribute', () => {
-    const { container } = render(<StyledButton attribute="test" />);
-    expect(container.querySelector('button[attribute="test"]')).toBeNull();
+  it('should render with variants', () => {
+    const component = ComponentRenderer(props);
+    expect(component).toBeDefined();
   });
 });

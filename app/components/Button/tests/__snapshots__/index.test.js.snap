@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should renders primary as default 1`] = `ShallowWrapper {}`;
+
+exports[`<Button /> should renders secondary if passed as variant 1`] = `ShallowWrapper {}`;

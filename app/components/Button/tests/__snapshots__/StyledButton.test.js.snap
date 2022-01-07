@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StyledButton /> should render with primary variants 1`] = `ReactWrapper {}`;
+
+exports[`<StyledButton /> should render with secondary variants 1`] = `ReactWrapper {}`;

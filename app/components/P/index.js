@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import StyledH2 from './StyledH2';
+import StyledP from './StyledP';
 import { VARIANTS } from '../../utils/constants/variants';
 
-const H2 = ({ label, variant = VARIANTS.PRIMARY }) => (
-  <StyledH2 variant={variant}>{label}</StyledH2>
+const P = ({ label, variant = VARIANTS.PRIMARY }) => (
+  <StyledP variant={variant}>{label}</StyledP>
 );
 
-H2.propTypes = {
+P.propTypes = {
   label: PropTypes.string,
   variant: PropTypes.oneOf([
     VARIANTS.PRIMARY,
@@ -17,4 +17,4 @@ H2.propTypes = {
   ]),
 };
 
-export default H2;
+export default P;

@@ -29,7 +29,7 @@ module.exports = {
     {
       type: 'confirm',
       name: 'story',
-      default: false,
+      default: true,
       message: 'Do you want to create story for your component?',
     },
     {
@@ -41,7 +41,7 @@ module.exports = {
     {
       type: 'confirm',
       name: 'wantMessages',
-      default: true,
+      default: false,
       message: 'Do you want i18n messages (i.e. will this component use text)?',
     },
     {
@@ -49,6 +49,12 @@ module.exports = {
       name: 'wantLoadable',
       default: false,
       message: 'Do you want to load the component asynchronously?',
+    },
+    {
+      type: 'confirm',
+      name: 'wantStyledComponent',
+      default: true,
+      message: 'Do you want to add Styled Component?',
     },
   ],
   actions: data => {
@@ -67,12 +73,28 @@ module.exports = {
         abortOnFail: true,
       },
     ];
-
+    // If the user wants story
     if(data.story){
       actions.push({
         type: 'add',
         path: '../../app/components/{{properCase name}}/{{properCase name}}.stories.js',
         templateFile: './component/stories.js.hbs',
+        abortOnFail: true,
+      });
+    }
+
+    // If the user wants styled Component
+    if(data.wantStyledComponent){
+      actions.push({
+        type: 'add',
+        path: '../../app/components/{{properCase name}}/Styled{{properCase name}}.js',
+        templateFile: './component/styled.js.hbs',
+        abortOnFail: true,
+      });
+      actions.push({
+        type: 'add',
+        path: '../../app/components/{{properCase name}}/tests/Styled{{properCase name}}.test.js',
+        templateFile: './component/styledTest.js.hbs',
         abortOnFail: true,
       });
     }

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StyledH3 /> should render with Primary variants 1`] = `ReactWrapper {}`;
+
+exports[`<StyledH3 /> should render with Secondary variants 1`] = `ReactWrapper {}`;
+
+exports[`<StyledH3 /> should render with Tertiary variants 1`] = `ReactWrapper {}`;

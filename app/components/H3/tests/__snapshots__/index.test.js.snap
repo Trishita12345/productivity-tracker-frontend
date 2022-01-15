@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<H3 /> should renders Tertiary variant 1`] = `ShallowWrapper {}`;
+
+exports[`<H3 /> should renders primary as default 1`] = `ShallowWrapper {}`;
+
+exports[`<H3 /> should renders secondary variant 1`] = `ShallowWrapper {}`;
